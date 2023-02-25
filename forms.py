@@ -21,10 +21,13 @@ class NumberForm(Form):
         num = StringField('numeros',      
                     [validators.data_required(message = 'Este campo es requerido')])
         
-class DiccionarioForm(Form):
+class DGuardar(Form):
     palabraIng = StringField('palabraIng',[
         validators.data_required(message = 'La palabra es requerida')])
     palabraEsp = StringField('palabraEsp',[
         validators.data_required(message = 'La palabra es requerida')])
 
-    certification = RadioField('certification', choices = ['option1', 'option2'])
+class DBuscar(Form):
+    palabra = StringField('palabra',[
+        validators.data_required(message = 'La palabra es requerida')])
+    idioma = RadioField('idioma', [validators.DataRequired(message='Seleccione una opcion')] ,choices=[('Esp','Español'),('Ing','Ingles')])

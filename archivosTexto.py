@@ -16,9 +16,8 @@ alumno = {'Matricula': 12345,
           'Correo': 'marioL@gmail.com'
           }
 f = open('alumnos.txt', 'a')
-for item in alumno:
-    f.write(item.)
-
+f.write(str(alumno.values()))
 #f.write('\n'+'Mario')
 #f.write('\n'+'Pedro')
 f.close()
+
