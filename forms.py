@@ -42,3 +42,31 @@ class LoginForm(Form):
     password = PasswordField('contraseña', [validators.DataRequired(message='El campo es requerido'),
                             validators.length(min=5, max=15, message='Ingresa un numero minimo')]
                         )
+    
+class ResistenciaForm(Form):
+    banda1 = SelectField('banda1', [validators.DataRequired(message='Seleccione una opcion')],
+                        choices= [('Negro','Negro'),('Cafe','Cafe'),
+                                  ('Rojo','Rojo'), ('Naranja','Naranja'),
+                                  ('Amarillo','Amarillo'), ('Verde','Verde'),
+                                  ('Azul','Azul'),('Violeta','Violeta'),
+                                  ('Gris','Gris'), ('Blanco','Blanco')])
+    banda2 = SelectField('banda2', [validators.DataRequired(message='Seleccione una opcion')],
+                        choices= [('Negro','Negro'),('Cafe','Cafe'),
+                                  ('Rojo','Rojo'), ('Naranja','Naranja'),
+                                  ('Amarillo','Amarillo'), ('Verde','Verde'),
+                                  ('Azul','Azul'),('Violeta','Violeta'),
+                                  ('Gris','Gris'), ('Blanco','Blanco')])
+    banda3 = SelectField('banda3', [validators.DataRequired(message='Seleccione una opcion')],
+                        choices= [('Negro','Negro'),('Cafe','Cafe'),
+                                  ('Rojo','Rojo'), ('Naranja','Naranja'),
+                                  ('Amarillo','Amarillo'), ('Verde','Verde'),
+                                  ('Azul','Azul'),('Violeta','Violeta'),
+                                  ('Gris','Gris'), ('Blanco','Blanco')])
+    tolerancia = RadioField('tolerancia', [validators.DataRequired(message='Seleccione una opcion')],
+                            choices=[('Oro','Oro'),('Plata','Plata')])
+    
+class InicioForm(Form):
+        Nombre = StringField('nombre',[
+        validators.data_required(message = 'Su nombre es requerido')]
+                            )
+        motivo = StringField('motivo')
