@@ -24,12 +24,17 @@ def escribirPalabra(pEsp, pIng):
 def buscarIng(diccionario, palabra):
     palabraL = palabra.lower()
     print(palabraL)
-    if palabraL in map(str.lower, diccionario.keys()):
-        print(map(str.lower, diccionario.keys()))
-        valor = diccionario[palabraL]
-        return 'La traduccion de '+ palabra + ' en Ingles es: '+ valor
-    else:
-        return 'La palabra no se encuentra en el diccionario'
+    for clave in diccionario.keys():
+        print(clave)
+        print(palabraL)
+        if palabraL == clave.lower():
+            valor = diccionario[clave]
+            mensaje =  'La traduccion de '+ palabra + ' en Ingles es: '+ valor
+            break
+        else:
+            mensaje = 'La palabra no se encuentra en el diccionario'
+    return mensaje
+        
         
 def buscarEsp(diccionario, palabra):
     palabraL = palabra.lower()
