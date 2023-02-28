@@ -55,6 +55,8 @@ def calcularR():
             'maxi': maxi
             }
         color = calculos.mostrarColores(banda1,banda2,banda3,rbt)
+        success_message = '{} el calculo ha sido realizado'.format(valor_cookie)
+        flash(success_message)
     return render_template("Resistencia.html", form = form, res = res, color = color, nombre = valor_cookie)
 
 @app.after_request
